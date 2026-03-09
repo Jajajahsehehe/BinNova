@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>BinNova Smart Bin Map</title>
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+<style>
+#map {
+height: 600px;
+}
+</style>
+
+</head>
+
+<body>
+
+<h2>BinNova Smart Bin Map  Hindu College Campus</h2>
+<div id="map"></div>
+
+<script>
+
+var map = L.map('map').setView([13.1450,80.1998],17)
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{
+attribution:'© OpenStreetMap'
+}).addTo(map);
+
+
+var bins = [
+
+{ id:"BIN01  Main Gate", lat:13.119753, lng:80.074418, level:30 },
+
+{ id:"BIN02  Library", lat:13.122122, lng:80.074079, level:60 },
+
+{ id:"BIN03  Canteen", lat:13.121087, lng:80.073739, level:85 },
+
+{ id:"BIN04  Playground", lat:13.122892, lng:80.073517, level:40 },
+
+{ id:"BIN05  Parking Area", lat:13.120927, lng:80.074542, level:70 }
+
+];
+
+bins.forEach(bin => {
+
+let color="green";
+
+if(bin.level>80)
+color="red";
+else if(bin.level>50)
+color="orange";
+
+var marker=L.circleMarker([bin.lat,bin.lng],{
+color:color,
+radius:10
+}).addTo(map);
+
+marker.bindPopup(
+"<b>"+bin.id+"</b><br>"+
+"Fill Level: "+bin.level+"%<br>"+
+"<a target='_blank' href='https://www.google.com/maps/dir/?api=1&destination="+bin.lat+","+bin.lng+"'>Navigate</a>"
+);
+
+});
+
+</script>
+
+</body>
+</html>
