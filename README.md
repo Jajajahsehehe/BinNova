@@ -2,7 +2,7 @@
 
 BinNova is an intelligent smart waste management system designed for modern smart cities.
 
-## 🚀 Key Features
+##  Key Features
 - Real-time bin monitoring using IoT sensors
 - Wet and Dry waste segregation
 - Citizen-side smart bin locator (map interface)
@@ -10,16 +10,16 @@ BinNova is an intelligent smart waste management system designed for modern smar
 - Smart alerts for municipal waste collection
 - Expandable bin design (auto height increase at 80%)
 
-## 🧠 System Architecture
+##  System Architecture
 Sensor → ESP32 → Cloud → Dashboard → Citizen Interface
 
-## 🛠 Technologies Used
+##  Technologies Used
 - ESP32 / STM32
 - Ultrasonic Sensors
 - Firebase (Real-time database)
 - HTML, CSS, JavaScript
 
-## 📦 Project Structure
+##  Project Structure
 - web → frontend map interface
 - hardware → microcontroller code
 - diagrams → design diagrams
@@ -29,5 +29,5 @@ Sensor → ESP32 → Cloud → Dashboard → Citizen Interface
 - Route optimization for waste collection
 - Smart analytics dashboard
 
-## 👨‍💻 Author
+##  Author
 Gokul
